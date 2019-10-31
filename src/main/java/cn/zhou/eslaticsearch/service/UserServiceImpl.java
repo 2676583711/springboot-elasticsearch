@@ -48,6 +48,12 @@ public class UserServiceImpl implements UserService {
         userDao.deleteByUsername(username);
     }
 
+    //按照 id删除
+    @Override
+    public void deleteById(Integer id) {
+        userDao.deleteById(id);
+    }
+
     //修改
     @Override
     public boolean updateUser(UserBean user) {

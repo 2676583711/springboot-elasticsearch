@@ -43,4 +43,7 @@ public interface UserService {
 
     //按照用户名删除
     void deleteByUsername(String username);
+
+    //按照 id删除
+    void deleteById(Integer id);
 }

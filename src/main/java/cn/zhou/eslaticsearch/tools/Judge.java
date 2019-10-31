@@ -38,61 +38,41 @@ public class Judge {
     }
 
 
-    public static void isEmpty(Integer id, String username, String password, Model m) {
-        if (isNull(id, username, password)) {
-            if (Judge.isNull(password)) {
-                m.addAttribute("show", "三项不能为空!!!!!!");
-                return;
-            }
-        }
-
-        if (Judge.isNull(id)) {
-            m.addAttribute("show", "ID不能为空!!!!!!");
-            return;
-        }
-        if (Judge.isNull(username)) {
-            m.addAttribute("show", "username不能为空!!!!!!");
-            return;
-        }
-        if (Judge.isNull(password)) {
-            m.addAttribute("show", "password不能为空!!!!!!");
-            return;
-        }
-    }
-
-    public static void isEmpty(Integer id, String username, String password, ModelAndView m) {
+    public static boolean isEmpty(Integer id, String username, String password, ModelAndView m) {
         if (isNull(id, username, password)) {
             if (Judge.isNull(password)) {
                 m.addObject("show", "三项不能为空!!!!!!");
-                return;
+                return true;
             }
         }
 
         if (Judge.isNull(id)) {
             m.addObject("show", "ID不能为空!!!!!!");
-            return;
+            return true;
         }
         if (Judge.isNull(username)) {
             m.addObject("show", "username不能为空!!!!!!");
-            return;
+            return true;
         }
         if (Judge.isNull(password)) {
             m.addObject("show", "password不能为空!!!!!!");
-            return;
+            return true;
         }
+        return false;
     }
 
 
-    public static void isEmpty(Integer id, String username, Model m) {
+    public static boolean isEmpty(Integer id, String username, ModelAndView m) {
         if (Judge.isNull(id)) {
-            m.addAttribute("show", "ID不能为空!!!!!!");
-            return;
+            m.addObject("show", "ID不能为空!!!!!!");
+            return true;
         }
         if (Judge.isNull(username)) {
-            m.addAttribute("show", "username不能为空!!!!!!");
-            return;
+            m.addObject("show", "username不能为空!!!!!!");
+            return true;
         }
 
+        return false;
     }
 
 }

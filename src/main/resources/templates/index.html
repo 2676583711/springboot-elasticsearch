@@ -50,7 +50,7 @@
 <h1 align="center">elasticsearch 控制页面</h1>
 
 <div style="text-align: center;margin-top: 50px;">
-    <form method="post" id="form" style="align-self: center;">
+    <form method="post" id="form">
         ID：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="number" name="id"/> <br/>
         用户名：<input type="text" name="username"/><br/>
@@ -61,10 +61,12 @@
         <input value="修改" type="button" onclick="updateUser()"/>
         <input value="查询" type="button" onclick="getUser()"/>
         <input value="查询所有" type="button" onclick="getAllUsers()"/>
-
     </form>
-
-    <p th:text="${show}" style="text-align: center;margin-top: 50px;"></p>
+    <p th:each="text:${show}"
+       style="margin-top: 20px;
+       text-align: center;">
+        <span th:text="${text}" style="text-align: center;margin-top: 5px;"/>
+    </p>
 </div>
 </body>
 </html>
