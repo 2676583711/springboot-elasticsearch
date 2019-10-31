@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        function addUser() {
+            var form = document.getElementById("form");
+            //添加user
+            form.action = "/addUser";
+            form.submit();
+        }
+
+        function getUser() {
+            var form = document.getElementById("form");
+            //查询user,指定提交的地址
+            form.action = "/getUser";
+            //最后必须使用 submit 进行提交
+            form.submit();
+        }
+
+        function deleteUser() {
+            var form = document.getElementById("form");
+            //查询user,指定提交的地址
+            form.action = "/deleteUser";
+            //最后必须使用 submit 进行提交
+            form.submit();
+        }
+
+        function updateUser() {
+            var form = document.getElementById("form");
+            //查询user,指定提交的地址
+            form.action = "/updateUser";
+            //最后必须使用 submit 进行提交
+            form.submit();
+        }
+
+        function getAllUsers() {
+            var form = document.getElementById("form");
+            //查询user,指定提交的地址
+            form.action = "/getAllUsers";
+            //最后必须使用 submit 进行提交
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+
+<h1 align="center">elasticsearch 控制页面</h1>
+
+<div style="text-align: center;margin-top: 50px;">
+    <form method="post" id="form" style="align-self: center;">
+        ID：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" name="id"/> <br/>
+        用户名：<input type="text" name="username"/><br/>
+        密&nbsp;&nbsp;&nbsp;码：&nbsp;&nbsp;
+        <input type="text" name="password"/><br/>
+        <input value="添加" type="button" onclick="addUser()"/>
+        <input value="删除" type="button" onclick="deleteUser()"/>
+        <input value="修改" type="button" onclick="updateUser()"/>
+        <input value="查询" type="button" onclick="getUser()"/>
+        <input value="查询所有" type="button" onclick="getAllUsers()"/>
+
+    </form>
+
+    <p th:text="${show}" style="text-align: center;margin-top: 50px;"></p>
+</div>
+</body>
+</html>
