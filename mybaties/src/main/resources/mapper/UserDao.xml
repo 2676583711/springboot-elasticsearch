@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper接口-->
+<mapper namespace="cn.zhou.mybaties.dao.UserDao">
+
+    <!--    <result column="表的一个字段（可以为任意表的一个字段）"
+     jdbcType="字段类型"
+     property="映射到pojo对象的一个属性（须为type定义的pojo对象中的一个属性）"/>-->
+    <resultMap id="userMap" type="UserBean">
+        <!--        jdbcType="INTEGER"-->
+        <result column="id" property="id"/>
+        <!--        jdbcType="String"-->
+        <result column="username" property="username"/>
+        <!--        jdbcType="String"-->
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--    public UserBean getUserByName(String UserName);-->
+<!--    userMap-->
+    <select id="getUserByName" parameterType="String" resultType="UserBean">
+        select * from jpa where username = #{username}
+    </select>
+
+</mapper>
